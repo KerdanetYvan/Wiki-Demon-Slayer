@@ -60,7 +60,7 @@ db.sqlite3
 db.sqlite3-journal
 
 # Media files (uncomment if you want to ignore user uploads)
-# medias/
+medias/
 # media/
 
 # Static files
@@ -139,6 +139,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Migrations
+migrations
 
 # ===========================
 # React / Node.js Frontend
