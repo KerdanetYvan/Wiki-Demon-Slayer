@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.admin.views.decorators import staff_member_required
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,6 +25,8 @@ from api.export_api import export_api_db_json
 urlpatterns = [
     path("admin/api/export-db/", staff_member_required(export_api_db_json), name="export_api_db"),
     path('admin/', admin.site.urls),
+    path('api/v1/', include('api.urls')),
+    path('api/auth/', include('djoser.urls.authtoken')),
 ]
 
 if settings.DEBUG:
