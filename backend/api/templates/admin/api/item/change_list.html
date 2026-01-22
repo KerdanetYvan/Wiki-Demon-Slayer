@@ -1,0 +1,12 @@
+{% extends "admin/change_list.html" %}
+
+{% block content %}
+    {{ block.super }}
+    <section>
+        <h2>Statistiques des objets</h2>
+        <div>
+            <img src="{{ type_chart }}" alt="Graphique des statistiques des objets basé sur leur type">
+            <img src="{{ rarity_chart }}" alt="Graphique des statistiques des objets basé sur leur rareté">
+        </div>
+    </section>
+{% endblock %}
