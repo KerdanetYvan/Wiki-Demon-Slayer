@@ -40,4 +40,4 @@ class TechniqueViewSet(viewsets.ModelViewSet):
     queryset = Technique.objects.all()
     serializer_class = TechniqueSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['name', 'description']
+    search_fields = ['name', 'description', 'breathing_style_id__name', 'breathing_style_id__traducted_name', 'breathing_style_id__id']

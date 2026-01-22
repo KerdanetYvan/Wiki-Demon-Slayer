@@ -45,11 +45,11 @@ function Navbar() {
           </Link>
 
           <Link 
-            to="/techniques" 
-            className={`navbar-link ${isActive('/techniques') ? 'active' : ''}`}
+            to="/blood-demon-arts" 
+            className={`navbar-link ${isActive('/blood-demon-arts') ? 'active' : ''}`}
           >
-            <span className="link-icon">⚡</span>
-            <span className="link-text">Techniques</span>
+            <span className="link-icon">🩸</span>
+            <span className="link-text">Arts Démoniaques</span>
           </Link>
 
           <Link 

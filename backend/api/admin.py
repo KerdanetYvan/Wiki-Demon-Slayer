@@ -231,7 +231,28 @@ admin.site.register(Item, ItemAdmin)
 
 class TechniqueAdmin(admin.ModelAdmin):
     list_display = ('name', 'power_level', 'breathing_style_id')
-    search_fields = ('name', 'description')
     list_filter = ('breathing_style_id',)
+    
+    def get_search_results(self, request, queryset, search_term):
+        # Recherche manuelle totale
+        if not search_term:
+            return queryset, False
+        
+        from django.db.models import Q
+        
+        # Recherche sur nom technique, description, nom du style, ou ID du style
+        search_query = (
+            Q(name__icontains=search_term) |
+            Q(description__icontains=search_term) |
+            Q(breathing_style_id__name__icontains=search_term) |
+            Q(breathing_style_id__traducted_name__icontains=search_term)
+        )
+        
+        # Si c'est un nombre, chercher aussi par ID du breathing style
+        if search_term.isdigit():
+            search_query |= Q(breathing_style_id__id=int(search_term))
+        
+        return queryset.filter(search_query), False
+
 admin.site.register(Technique, TechniqueAdmin)
 

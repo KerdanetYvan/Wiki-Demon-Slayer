@@ -1,0 +1,331 @@
+.blood-demon-art-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #1a0b2e 100%);
+  padding: 2rem;
+  position: relative;
+}
+
+.blood-demon-art-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 68, 68, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.back-nav {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+.back-nav:hover {
+  background: rgba(255, 68, 68, 0.2);
+  border-color: #ff4444;
+  transform: translateX(-5px);
+}
+
+.art-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.art-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.art-icon-large {
+  font-size: 10rem;
+  filter: drop-shadow(0 0 50px #ff4444);
+  animation: float-demon 3s ease-in-out infinite;
+}
+
+@keyframes float-demon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
+
+.art-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+}
+
+.art-name {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 0 30px rgba(255, 68, 68, 0.8);
+}
+
+.art-type {
+  font-size: 1.5rem;
+  color: #ff8888;
+  font-weight: 600;
+  margin: -1rem 0 0 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.power-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, rgba(255, 68, 68, 0.2), rgba(204, 0, 0, 0.2));
+  border: 2px solid #ff4444;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 68, 68, 0.3);
+}
+
+.power-label {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.power-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff4444;
+  text-shadow: 0 0 20px #ff4444;
+}
+
+/* Wiki Content */
+.wiki-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wiki-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #ff4444;
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.wiki-section:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 20px rgba(255, 68, 68, 0.2);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff4444;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 68, 68, 0.2);
+}
+
+.section-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.description-content {
+  color: #ccc;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.description-content p {
+  margin: 0;
+}
+
+/* Character Link */
+.character-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.character-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #ff4444;
+  transform: translateX(10px);
+}
+
+.character-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff4444;
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.4);
+}
+
+.character-info {
+  flex: 1;
+}
+
+.character-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+}
+
+.character-info p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.link-arrow {
+  font-size: 2rem;
+  color: #ff4444;
+}
+
+/* Metadata */
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.metadata-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.metadata-label {
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-value {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Loading & Error States */
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 68, 68, 0.2);
+  border-top-color: #ff4444;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.error-container h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.error-container p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 0 0 2rem 0;
+}
+
+.back-button {
+  background: rgba(255, 68, 68, 0.2);
+  border: 1px solid #ff4444;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 68, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .art-name {
+    font-size: 2.5rem;
+  }
+
+  .art-icon-large {
+    font-size: 6rem;
+  }
+
+  .power-value {
+    font-size: 2rem;
+  }
+
+  .character-link {
+    flex-direction: column;
+    text-align: center;
+  }
+}
