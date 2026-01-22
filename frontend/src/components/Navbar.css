@@ -1,0 +1,194 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(26, 11, 46, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 68, 68, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-kanji {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ff4444;
+  text-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { text-shadow: 0 0 20px rgba(255, 68, 68, 0.8); }
+  to { text-shadow: 0 0 30px rgba(255, 68, 68, 1), 0 0 50px rgba(255, 68, 68, 0.5); }
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 68, 68, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.navbar-link:hover::before {
+  left: 100%;
+}
+
+.navbar-link:hover {
+  background: rgba(255, 68, 68, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.navbar-link.active {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+}
+
+.navbar-link.active:hover {
+  background: linear-gradient(135deg, #ff6666, #ff0000);
+  box-shadow: 0 6px 20px rgba(255, 68, 68, 0.6);
+}
+
+.link-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover .link-icon {
+  transform: scale(1.2);
+}
+
+.link-text {
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-menu {
+    gap: 0.3rem;
+  }
+
+  .navbar-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .link-text {
+    display: none;
+  }
+
+  .navbar-link {
+    padding: 0.7rem;
+  }
+
+  .link-icon {
+    font-size: 1.4rem;
+  }
+
+  .navbar-menu {
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    padding: 0.8rem 1rem;
+    gap: 1rem;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .logo-kanji {
+    font-size: 1.8rem;
+  }
+
+  .navbar-link {
+    padding: 0.6rem;
+  }
+
+  .link-icon {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-menu {
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-link {
+    padding: 0.5rem;
+  }
+
+  .link-icon {
+    font-size: 1.2rem;
+  }
+}

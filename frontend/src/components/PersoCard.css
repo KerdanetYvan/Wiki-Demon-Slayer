@@ -1,0 +1,205 @@
+.perso-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.perso-card:hover {
+  transform: translateY(-10px);
+  border-color: #ff4444;
+  box-shadow: 0 10px 30px rgba(255, 68, 68, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.perso-card-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 100%);
+}
+
+.perso-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.perso-card:hover .perso-card-image img {
+  transform: scale(1.1);
+}
+
+.perso-card-type-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.type-emoji {
+  font-size: 1.2rem;
+}
+
+.perso-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.perso-card-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(255, 68, 68, 0.3);
+}
+
+.perso-card-rank {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.rank-icon {
+  font-size: 1.2rem;
+}
+
+.perso-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse-status 2s ease-in-out infinite;
+}
+
+@keyframes pulse-status {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.perso-card-status.status-alive {
+  background: rgba(0, 255, 0, 0.15);
+  color: #00ff00;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.perso-card-status.status-alive .status-dot {
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.perso-card-status.status-deceased {
+  background: rgba(139, 0, 0, 0.15);
+  color: #ff6666;
+  border: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.perso-card-status.status-deceased .status-dot {
+  background: #ff6666;
+  box-shadow: 0 0 10px #ff6666;
+}
+
+.perso-card-status.status-unknown {
+  background: rgba(128, 128, 128, 0.15);
+  color: #aaa;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.perso-card-status.status-unknown .status-dot {
+  background: #aaa;
+  box-shadow: 0 0 10px #aaa;
+}
+
+.perso-card-description {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.perso-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+  margin-top: auto;
+}
+
+.perso-card-button:hover {
+  background: linear-gradient(135deg, #ff6666 0%, #ff0000 100%);
+  box-shadow: 0 6px 25px rgba(255, 68, 68, 0.5);
+  transform: translateX(5px);
+}
+
+.button-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.perso-card-button:hover .button-arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perso-card-image {
+    height: 250px;
+  }
+
+  .perso-card-name {
+    font-size: 1.3rem;
+  }
+
+  .perso-card-content {
+    padding: 1rem;
+  }
+}
